@@ -7,8 +7,8 @@ from planetdiscovery.serializers import PlanetDiscoverySerializer
 # Create your views here.
 class PlanetDiscoveryCreateView(APIView):
     def get(self, request):
-        planetclass = PlanetDiscovery.objects.all()
-        serializer = PlanetDiscoverySerializer(planetclass, many=True)
+        planetdiscovery = PlanetDiscovery.objects.all()
+        serializer = PlanetDiscoverySerializer(planetdiscovery, many=True)
         return Response(serializer.data)
 
     def post(self, request):
@@ -18,5 +18,6 @@ class PlanetDiscoveryCreateView(APIView):
             serializer.save()
             return Response(serializer.data, 
                             status=201)
-        return Response(serializer.errors, 
+        return Response({
+            'message': 'Invalid'}, 
                         status=400)

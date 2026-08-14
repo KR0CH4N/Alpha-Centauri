@@ -19,6 +19,8 @@ class AccountListCreateView(APIView):
             serializer.save()
             return Response(serializer.data, 
                             status=201)
-        return Response(serializer.errors, 
+        return Response({
+            'message': 'Invalid'
+        }, 
                         status=400)
 
