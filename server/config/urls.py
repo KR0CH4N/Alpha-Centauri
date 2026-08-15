@@ -20,7 +20,9 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('api/', include('accounts.urls')),
-    path('api/', include('roles.urls'))
+    path('api/', include('roles.urls')),
+    path('api/', include('planetclass.urls')),
+    path('api/', include('planetdiscovery.urls'))
 
 ]
 

@@ -12,6 +12,6 @@ class PlanetDiscovery(models.Model):
     star_system = models.CharField(max_length = 100)
     description = models.CharField(max_length = 100)
     discovery_date = models.DateTimeField(auto_now = True)
-    cover_image = models.CharField(max_length = 100)
+    cover_image = models.CharField(max_length = 100, null = True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
